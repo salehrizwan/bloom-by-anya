@@ -9,28 +9,27 @@
       <stop offset="100%" stop-color="#BFA56E" />
     </linearGradient>
   </defs>
-  <rect width="100%" height="100%" fill="url(#bg)" />
-  <rect x="20" y="20" width="760" height="560" rx="16" fill="none" stroke="#D8C8A5" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.6" />
+  <rect width="800" height="600" fill="url(#bg)" />
+  <rect x="24" y="24" width="752" height="552" fill="none" stroke="#D8C8A5" stroke-width="1.5" stroke-opacity="0.5" rx="16" />
+  <rect x="36" y="36" width="728" height="528" fill="none" stroke="#D8C8A5" stroke-width="0.75" stroke-opacity="0.3" rx="12" />
   
-  <g transform="translate(400, 260)" text-anchor="middle">
-    <!-- Botanical wreath outline -->
-    <circle r="75" fill="none" stroke="url(#gold)" stroke-width="2" />
-    <circle r="68" fill="none" stroke="#788269" stroke-width="1" stroke-dasharray="3,3" opacity="0.7" />
-    
-    <!-- Flower icon -->
-    <path d="M0 -35 C12 -20 12 -10 0 0 C-12 -10 -12 -20 0 -35 Z" fill="#DDA9AC" opacity="0.85" />
-    <path d="M0 35 C12 20 12 10 0 0 C-12 10 -12 20 0 35 Z" fill="#DDA9AC" opacity="0.85" />
-    <path d="M-35 0 C-20 12 -10 12 0 0 C-10 -12 -20 -12 -35 0 Z" fill="#D99B20" opacity="0.8" />
-    <path d="M35 0 C20 12 10 12 0 0 C10 -12 20 -12 35 0 Z" fill="#D99B20" opacity="0.8" />
-    <circle r="12" fill="#303A2B" />
-    <circle r="5" fill="#D8C8A5" />
-    
-    <!-- Text -->
-    <text y="125" font-family="'Cormorant Garamond', Georgia, serif" font-size="28" font-weight="bold" fill="#303A2B" letter-spacing="1">
-      Blooms by Anya
-    </text>
-    <text y="152" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="500" fill="#788269" letter-spacing="2">
-      HANDCRAFTED FLORAL CREATION
-    </text>
+  <!-- Central Botanical Emblem -->
+  <g transform="translate(400, 260)">
+    <circle r="70" fill="#F7F1E7" stroke="url(#gold)" stroke-width="2" />
+    <!-- Botanical leaf sprigs -->
+    <path d="M 0 -45 C -25 -20 -25 20 0 45 C 25 20 25 -20 0 -45 Z" fill="none" stroke="#303A2B" stroke-width="1.5" />
+    <path d="M -45 0 C -20 -25 20 -25 45 0 C 20 25 -20 25 -45 0 Z" fill="none" stroke="#788269" stroke-width="1.5" />
+    <circle cx="0" cy="0" r="14" fill="#D8C8A5" />
+    <circle cx="0" cy="0" r="6" fill="#303A2B" />
   </g>
+  
+  <text x="400" y="390" text-anchor="middle" font-family="'Cormorant Garamond', 'Playfair Display', Georgia, serif" font-size="28" font-weight="bold" fill="#303A2B" letter-spacing="1">
+    Blooms by Anya
+  </text>
+  <text x="400" y="420" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="500" fill="#788269" letter-spacing="3">
+    THOUGHTFULLY MADE · BEAUTIFULLY GIFTED
+  </text>
+  <text x="400" y="445" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" font-weight="400" fill="#D8C8A5" letter-spacing="1.5">
+    SIALKOT, PAKISTAN
+  </text>
 </svg>

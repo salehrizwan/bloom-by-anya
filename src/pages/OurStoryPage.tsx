@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Sparkles, Heart, ArrowRight, ShieldCheck, MapPin, Scissors, Flower2, Gift } from 'lucide-react';
 import { BRAND_CONFIG } from '../config/brand';
+import { SafeImage } from '../components/SafeImage';
 
 export const OurStoryPage: React.FC = () => {
   return (
@@ -51,12 +52,11 @@ export const OurStoryPage: React.FC = () => {
 
           <div className="lg:col-span-6">
             <div className="relative rounded-3xl overflow-hidden border border-[#D8C8A5]/50 shadow-md aspect-[4/3] bg-[#F7F1E7]">
-              <img
+              <SafeImage
                 src={BRAND_CONFIG.assets.studio}
                 alt="Blooms by Anya Studio in Sialkot"
                 className="w-full h-full object-cover"
                 loading="lazy"
-                referrerPolicy="no-referrer"
               />
             </div>
           </div>

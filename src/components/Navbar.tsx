@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Search, Heart, ShoppingBag, Menu, X, User, MessageCircle } from 'lucide-react';
 import { BRAND_CONFIG } from '../config/brand';
 import { useShop } from '../context/ShopContext';
+import { SafeImage } from './SafeImage';
 
 export const Navbar: React.FC = () => {
   const navigate = useNavigate();
@@ -26,11 +27,10 @@ export const Navbar: React.FC = () => {
           {/* ZONE 1: BRAND LOGO */}
           <div className="flex items-center gap-3 shrink-0">
             <Link to="/" className="flex items-center gap-3 group">
-              <img
+              <SafeImage
                 src={BRAND_CONFIG.assets.logo}
                 alt="Blooms by Anya Official Emblem"
                 className="w-12 h-12 md:w-14 md:h-14 rounded-full object-contain shadow-xs border border-[#D8C8A5]/40 transition-transform duration-300 group-hover:scale-105"
-                referrerPolicy="no-referrer"
               />
               <div className="flex flex-col">
                 <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#303A2B] leading-none">
@@ -184,7 +184,7 @@ export const Navbar: React.FC = () => {
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-[#D8C8A5]/40">
                 <div className="flex items-center gap-2">
-                  <img
+                  <SafeImage
                     src={BRAND_CONFIG.assets.logo}
                     alt="Blooms by Anya"
                     className="w-10 h-10 rounded-full object-contain"

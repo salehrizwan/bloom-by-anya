@@ -90,10 +90,11 @@ Could you please confirm availability for Sialkot delivery?`;
           <div className="grid grid-cols-1 md:grid-cols-2">
             
             {/* Image Preview */}
+            <div className="relative bg-[#F7F1E7] min-h-[320px] md:min-h-full">
               <SafeImage
                 src={quickViewProduct.images[0]}
                 alt={quickViewProduct.name}
-                className="w-full h-full object-cover min-h-[320px] md:min-h-full"
+                className="w-full h-full object-cover"
               />
               <button
                 onClick={() => toggleWishlist(quickViewProduct.id)}

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Instagram, MessageCircle, MapPin, Mail, Sparkles, Heart } from 'lucide-react';
 import { BRAND_CONFIG } from '../config/brand';
 import { SAMPLE_DATA_NOTICE } from '../data/products';
+import { SafeImage } from './SafeImage';
 
 export const Footer: React.FC = () => {
   return (
@@ -15,11 +16,10 @@ export const Footer: React.FC = () => {
           {/* Col 1 & 2: Brand Identity & Story */}
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="flex items-center gap-3">
-              <img
+              <SafeImage
                 src={BRAND_CONFIG.assets.logo}
                 alt="Blooms by Anya"
                 className="w-14 h-14 rounded-full object-contain bg-[#FBF8F1] p-0.5 border border-[#D8C8A5]"
-                referrerPolicy="no-referrer"
               />
               <div>
                 <span className="font-serif text-2xl font-bold tracking-tight text-[#FBF8F1] block">

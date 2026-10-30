@@ -4,6 +4,7 @@ import { Heart, ShoppingBag, Trash2, ArrowRight } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
 import { PRODUCTS } from '../data/products';
 import { BRAND_CONFIG } from '../config/brand';
+import { SafeImage } from '../components/SafeImage';
 
 export const WishlistPage: React.FC = () => {
   const { wishlist, toggleWishlist, addToCart } = useShop();
@@ -63,11 +64,10 @@ export const WishlistPage: React.FC = () => {
               className="group relative flex flex-col bg-white rounded-2xl border border-[#D8C8A5]/40 overflow-hidden shadow-xs hover:shadow-md transition-all duration-300"
             >
               <Link to={`/product/${product.slug}`} className="aspect-[4/3] overflow-hidden bg-[#F7F1E7]">
-                <img
+                <SafeImage
                   src={product.images[0]}
                   alt={product.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  referrerPolicy="no-referrer"
                 />
               </Link>
 

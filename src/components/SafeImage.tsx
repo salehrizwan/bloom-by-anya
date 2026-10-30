@@ -1,58 +1,46 @@
 import React, { useState } from 'react';
-import { BRAND_CONFIG } from '../config/brand';
 
 interface SafeImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   fallbackSrc?: string;
-  showFallbackBadge?: boolean;
 }
 
 export const SafeImage: React.FC<SafeImageProps> = ({
   src,
-  alt = 'Blooms by Anya Arrangement',
+  alt,
   className = '',
-  fallbackSrc = BRAND_CONFIG.assets.fallback,
-  showFallbackBadge = false,
+  fallbackSrc = '/images/floral_fallback.svg',
   onError,
   ...props
 }) => {
   const [hasError, setHasError] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
 
-  const handleError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    if (!hasError) {
-      setHasError(true);
-    }
-    if (onError) {
-      onError(e);
-    }
+  // Normalize any leftover /src/assets paths to public /images paths defensively
+  const getNormalizedSrc = (inputSrc?: string) => {
+    if (!inputSrc) return fallbackSrc;
+    if (inputSrc.includes('hero_luxury_floral')) return '/images/hero/hero_luxury_floral.jpg';
+    if (inputSrc.includes('product_rose_bouquet')) return '/images/bouquets/rose_bouquet.jpg';
+    if (inputSrc.includes('product_sunflower_bouquet')) return '/images/bouquets/sunflower_bouquet.jpg';
+    if (inputSrc.includes('product_chocolate_hamper')) return '/images/hampers/chocolate_hamper.jpg';
+    if (inputSrc.includes('craft_studio_anya')) return '/images/gallery/craft_studio_anya.jpg';
+    if (inputSrc.includes('image_cab25869.png') || inputSrc.includes('logo')) return '/images/branding/logo.png';
+    return inputSrc;
   };
 
-  const currentSrc = hasError || !src ? fallbackSrc : src;
+  const currentSrc = hasError ? fallbackSrc : getNormalizedSrc(src);
 
   return (
-    <div className={`relative overflow-hidden ${className}`}>
-      {/* Loading shimmer placeholder */}
-      {!isLoaded && !hasError && (
-        <div className="absolute inset-0 bg-[#F7F1E7] animate-pulse" />
-      )}
-
-      <img
-        {...props}
-        src={currentSrc}
-        alt={alt}
-        className={`w-full h-full object-cover transition-opacity duration-300 ${
-          isLoaded || hasError ? 'opacity-100' : 'opacity-0'
-        }`}
-        onLoad={() => setIsLoaded(true)}
-        onError={handleError}
-        referrerPolicy="no-referrer"
-      />
-
-      {hasError && showFallbackBadge && (
-        <div className="absolute bottom-2 right-2 bg-[#303A2B]/80 text-[#D8C8A5] text-[10px] px-2 py-0.5 rounded backdrop-blur-xs font-mono">
-          Handcrafted
-        </div>
-      )}
-    </div>
+    <img
+      src={currentSrc}
+      alt={alt || 'Blooms by Anya'}
+      className={className}
+      onError={(e) => {
+        if (!hasError) {
+          setHasError(true);
+        }
+        if (onError) onError(e);
+      }}
+      referrerPolicy="no-referrer"
+      {...props}
+    />
   );
 };
