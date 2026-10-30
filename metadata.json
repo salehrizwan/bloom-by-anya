@@ -1,0 +1,6 @@
+{
+  "name": "Blooms by Anya",
+  "description": "Luxury handmade floral bouquets, chocolate bouquets, and bespoke DIY gift hampers from Sialkot, Pakistan. Thoughtfully Made. Beautifully Gifted.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
