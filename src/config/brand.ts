@@ -4,6 +4,13 @@
  * Sialkot, Pakistan
  */
 
+// Import static image assets directly so Vite bundles and hashes them in production builds (Vercel/GitHub/Cloud Run)
+import heroImg from '../assets/images/hero_luxury_floral_1793343305329.jpg';
+import roseBouquetImg from '../assets/images/product_rose_bouquet_1793343306109.jpg';
+import sunflowerBouquetImg from '../assets/images/product_sunflower_bouquet_1793343307062.jpg';
+import chocolateHamperImg from '../assets/images/product_chocolate_hamper_1793343307698.jpg';
+import studioImg from '../assets/images/craft_studio_anya_1793343308424.jpg';
+
 export const BRAND_CONFIG = {
   name: "Blooms by Anya",
   tagline: "Thoughtfully Made. Beautifully Gifted.",
@@ -31,11 +38,12 @@ export const BRAND_CONFIG = {
   },
   assets: {
     logo: "/assets/aistudio/image_cab25869.png",
-    hero: "/src/assets/images/hero_luxury_floral_1793343305329.jpg",
-    roseBouquet: "/src/assets/images/product_rose_bouquet_1793343306109.jpg",
-    sunflowerBouquet: "/src/assets/images/product_sunflower_bouquet_1793343307062.jpg",
-    chocolateHamper: "/src/assets/images/product_chocolate_hamper_1793343307698.jpg",
-    studio: "/src/assets/images/craft_studio_anya_1793343308424.jpg",
+    fallback: "/images/floral_fallback.svg",
+    hero: heroImg,
+    roseBouquet: roseBouquetImg,
+    sunflowerBouquet: sunflowerBouquetImg,
+    chocolateHamper: chocolateHamperImg,
+    studio: studioImg,
   },
   palette: {
     warmIvory: "#F7F1E7",

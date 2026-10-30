@@ -6,6 +6,7 @@ import { useShop } from '../context/ShopContext';
 import { BRAND_CONFIG } from '../config/brand';
 import { SAMPLE_DATA_NOTICE } from '../data/products';
 import { Order } from '../types';
+import { SafeImage } from '../components/SafeImage';
 
 export const CheckoutPage: React.FC = () => {
   const navigate = useNavigate();
@@ -473,11 +474,10 @@ export const CheckoutPage: React.FC = () => {
             <div className="space-y-4 max-h-[360px] overflow-y-auto pr-1 divide-y divide-[#D8C8A5]/20">
               {cart.map((item) => (
                 <div key={item.id} className="pt-3 first:pt-0 flex gap-3">
-                  <img
+                  <SafeImage
                     src={item.image}
                     alt={item.name}
                     className="w-16 h-16 rounded-xl object-cover border border-[#D8C8A5]/40 shrink-0"
-                    referrerPolicy="no-referrer"
                   />
                   <div className="flex-1 min-w-0 text-xs">
                     <h3 className="font-semibold text-[#303A2B] truncate">{item.name}</h3>

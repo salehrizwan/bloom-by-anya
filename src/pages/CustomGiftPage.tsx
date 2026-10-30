@@ -4,6 +4,7 @@ import { Check, Plus, Minus, Sparkles, ShoppingBag, MessageCircle, ArrowLeft, Ar
 import { CUSTOM_BUILDER_OPTIONS, SAMPLE_DATA_NOTICE } from '../data/products';
 import { BRAND_CONFIG } from '../config/brand';
 import { useShop } from '../context/ShopContext';
+import { SafeImage } from '../components/SafeImage';
 
 export const CustomGiftPage: React.FC = () => {
   const navigate = useNavigate();
@@ -299,11 +300,10 @@ Could you please confirm the crafting timeline and Sialkot delivery schedule? Th
                             : 'border-[#D8C8A5]/60 bg-[#FBF8F1] hover:border-[#788269]'
                         }`}
                       >
-                        <img
+                        <SafeImage
                           src={base.image}
                           alt={base.name}
                           className="w-full h-36 object-cover rounded-xl mb-3"
-                          referrerPolicy="no-referrer"
                         />
                         <div className="flex justify-between items-start">
                           <div>
@@ -803,11 +803,10 @@ Could you please confirm the crafting timeline and Sialkot delivery schedule? Th
 
             {/* Visual Image Preview */}
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#F7F1E7] border border-[#D8C8A5]/40">
-              <img
+              <SafeImage
                 src={selectedBase.image}
                 alt={selectedBase.name}
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-4 text-white">
                 <span className="text-[11px] tracking-widest uppercase font-mono text-[#D8C8A5]">

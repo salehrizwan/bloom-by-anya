@@ -3,6 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        try {
+          var _fetch = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() {
+              return _fetch;
+            },
+            set: function(fn) {
+              _fetch = fn;
+            }
+          });
+        } catch (e) {}
+        try {
+          if (window.Window && window.Window.prototype) {
+            var protoFetch = window.Window.prototype.fetch;
+            Object.defineProperty(window.Window.prototype, 'fetch', {
+              configurable: true,
+              enumerable: true,
+              get: function() {
+                return protoFetch;
+              },
+              set: function(fn) {
+                protoFetch = fn;
+              }
+            });
+          }
+        } catch (e) {}
+      })();
+    </script>
     <link rel="icon" type="image/png" href="/assets/aistudio/image_cab25869.png" />
     <title>Blooms by Anya</title>
     <meta name="description" content="Luxury handmade floral bouquets, chocolate bouquets, and bespoke DIY gift hampers from Sialkot, Pakistan. Thoughtfully Made. Beautifully Gifted." />

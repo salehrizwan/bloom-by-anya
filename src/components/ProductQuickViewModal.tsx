@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { X, Heart, ShoppingBag, MessageCircle, Check, ArrowRight } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
 import { BRAND_CONFIG } from '../config/brand';
+import { SafeImage } from './SafeImage';
 
 export const ProductQuickViewModal: React.FC = () => {
   const {
@@ -89,12 +90,10 @@ Could you please confirm availability for Sialkot delivery?`;
           <div className="grid grid-cols-1 md:grid-cols-2">
             
             {/* Image Preview */}
-            <div className="relative bg-[#F7F1E7] min-h-[320px] md:min-h-full">
-              <img
+              <SafeImage
                 src={quickViewProduct.images[0]}
                 alt={quickViewProduct.name}
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover min-h-[320px] md:min-h-full"
               />
               <button
                 onClick={() => toggleWishlist(quickViewProduct.id)}

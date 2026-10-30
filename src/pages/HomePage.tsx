@@ -5,6 +5,7 @@ import { BRAND_CONFIG } from '../config/brand';
 import { PRODUCTS, SAMPLE_DATA_NOTICE } from '../data/products';
 import { ProductCard } from '../components/ProductCard';
 import { useShop } from '../context/ShopContext';
+import { SafeImage } from '../components/SafeImage';
 
 export const HomePage: React.FC = () => {
   const { showToast } = useShop();
@@ -99,7 +100,7 @@ export const HomePage: React.FC = () => {
       <section className="relative min-h-[580px] lg:min-h-[640px] flex items-center justify-center overflow-hidden bg-[#F7F1E7]">
         {/* Large Lifestyle Photo Backdrop with soft contrast scrim */}
         <div className="absolute inset-0">
-          <img
+          <SafeImage
             src={BRAND_CONFIG.assets.hero}
             alt="Handmade luxury bouquets and gift hampers at Blooms by Anya"
             className="w-full h-full object-cover object-center scale-102 transition-transform duration-1000 ease-out"
@@ -201,12 +202,11 @@ export const HomePage: React.FC = () => {
               className="group relative rounded-3xl overflow-hidden border border-[#D8C8A5]/40 bg-white flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="aspect-[4/3] overflow-hidden bg-[#F7F1E7]">
-                <img
+                <SafeImage
                   src={col.image}
                   alt={col.title}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-106"
                   loading="lazy"
-                  referrerPolicy="no-referrer"
                 />
               </div>
 
@@ -300,12 +300,11 @@ export const HomePage: React.FC = () => {
 
             <div className="lg:col-span-5 p-6 sm:p-8 lg:p-12">
               <div className="relative aspect-square rounded-2xl overflow-hidden border border-[#D8C8A5]/30 shadow-2xl">
-                <img
+                <SafeImage
                   src={BRAND_CONFIG.assets.studio}
                   alt="Crafting bespoke floral gifts in Sialkot"
                   className="w-full h-full object-cover"
                   loading="lazy"
-                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex items-end p-6">
                   <p className="text-xs text-[#D8C8A5] italic font-serif">
@@ -343,12 +342,11 @@ export const HomePage: React.FC = () => {
               rel="noopener noreferrer"
               className="group relative aspect-square rounded-2xl overflow-hidden bg-[#F7F1E7] border border-[#D8C8A5]/40 shadow-xs block"
             >
-              <img
+              <SafeImage
                 src={post.image}
                 alt={post.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-[#303A2B]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center text-white">
                 <Instagram className="w-6 h-6 text-[#D8C8A5] mb-2" />

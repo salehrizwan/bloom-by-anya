@@ -18,6 +18,7 @@ import { PRODUCTS, SAMPLE_DATA_NOTICE } from '../data/products';
 import { ProductCard } from '../components/ProductCard';
 import { useShop } from '../context/ShopContext';
 import { BRAND_CONFIG } from '../config/brand';
+import { SafeImage } from '../components/SafeImage';
 
 export const ProductDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -132,11 +133,10 @@ Please confirm delivery availability in Sialkot.`;
             
             {/* Main Stage Image */}
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-[#F7F1E7] border border-[#D8C8A5]/50 shadow-sm">
-              <img
+              <SafeImage
                 src={product.images[selectedImageIndex] || product.images[0]}
                 alt={product.name}
                 className="w-full h-full object-cover transition-all duration-300"
-                referrerPolicy="no-referrer"
               />
 
               {product.badge && (
@@ -172,11 +172,10 @@ Please confirm delivery availability in Sialkot.`;
                         : 'border-[#D8C8A5]/60 opacity-75 hover:opacity-100'
                     }`}
                   >
-                    <img
+                    <SafeImage
                       src={img}
                       alt={`${product.name} angle ${idx + 1}`}
                       className="w-full h-full object-cover"
-                      referrerPolicy="no-referrer"
                     />
                   </button>
                 ))}

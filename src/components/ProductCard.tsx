@@ -4,6 +4,7 @@ import { Heart, Eye, ShoppingBag } from 'lucide-react';
 import { Product } from '../types';
 import { useShop } from '../context/ShopContext';
 import { BRAND_CONFIG } from '../config/brand';
+import { SafeImage } from './SafeImage';
 
 interface ProductCardProps {
   product: Product;
@@ -43,12 +44,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       
       {/* Image Container with 4:3 Aspect Ratio */}
       <Link to={`/product/${product.slug}`} className="relative block aspect-[4/3] overflow-hidden bg-[#F7F1E7]">
-        <img
+        <SafeImage
           src={product.images[0]}
           alt={product.name}
           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           loading="lazy"
-          referrerPolicy="no-referrer"
         />
 
         {/* Subtle Badge (Max 1 subtle text tag per guidelines) */}

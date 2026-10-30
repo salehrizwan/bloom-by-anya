@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { X, Trash2, Plus, Minus, ArrowRight, ShoppingBag, ShieldCheck } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
 import { BRAND_CONFIG } from '../config/brand';
+import { SafeImage } from './SafeImage';
 
 export const MiniCartDrawer: React.FC = () => {
   const {
@@ -98,11 +99,10 @@ export const MiniCartDrawer: React.FC = () => {
             ) : (
               cart.map((item) => (
                 <div key={item.id} className="py-4 flex gap-4">
-                  <img
+                  <SafeImage
                     src={item.image}
                     alt={item.name}
                     className="w-20 h-20 rounded-lg object-cover border border-[#D8C8A5]/40 shrink-0"
-                    referrerPolicy="no-referrer"
                   />
                   <div className="flex-1 min-w-0">
                     <div className="flex justify-between items-start gap-2">

@@ -4,6 +4,7 @@ import { Trash2, Plus, Minus, ArrowRight, ShoppingBag, ShieldCheck, Tag, ArrowLe
 import { useShop } from '../context/ShopContext';
 import { BRAND_CONFIG } from '../config/brand';
 import { SAMPLE_DATA_NOTICE } from '../data/products';
+import { SafeImage } from '../components/SafeImage';
 
 export const CartPage: React.FC = () => {
   const navigate = useNavigate();
@@ -108,11 +109,10 @@ export const CartPage: React.FC = () => {
               <div key={item.id} className="py-6 first:pt-0 last:pb-0 flex flex-col sm:flex-row gap-5 items-start sm:items-center">
                 
                 {/* Thumb */}
-                <img
+                <SafeImage
                   src={item.image}
                   alt={item.name}
                   className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover border border-[#D8C8A5]/40 shrink-0"
-                  referrerPolicy="no-referrer"
                 />
 
                 {/* Details */}
